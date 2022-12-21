@@ -1,18 +1,43 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const userController = require("./routes/userRoute");
+const signupLoginController = require("./routes/signupLoginRoute");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+require("dotenv").config();
+const functions = require("firebase-functions");
+const DB = process.env.MONGO_DB;
+
+mongoose.connect(
+  DB,
+  () => {
+    console.log("Successfully connected to database!");
+  },
+  (err) => {
+    console.log(err);
+  }
+);
+
+// app.use(express.json({ limit: "30mb", extended: true }));
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(cors());
+
+app.listen(3000,()=>console.log("Server is up at 3000 ports"))
 
 app.get("/", (req, res) => {
-  res.status(200).send("Realestate Backend server By Deepak");
+  res.status(200).send("Realestate Backend server By DeepakKumar");
 });
 
 app.get("*", (req, res) => {
-    res.status(400).json({
-        status:"Failed",
-        message:"Invalid request"
-    });
+  res.status(400).json({
+    status:"failed",
+    message:"Invalid Request",
+  });
 });
 
-app.listen(3000,()=>console.log("Listening to server at port 3000"))
+app.use(userController);
+app.use(signupLoginController);
 
-
+exports.deepak_Realestate_Server = functions.https.onRequest(app);
