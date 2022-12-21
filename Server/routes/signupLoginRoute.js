@@ -1,5 +1,5 @@
 const express = require("express");
-const signupModal = require("../models/signupSchema");
+const signupModal = require("../Schema/signupSchema");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const saltRounds = 10;

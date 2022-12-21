@@ -1,8 +1,8 @@
 const express = require("express");
-const userModal = require("../models/userSchema");
+const userModal = require("../Schema/userSchema");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-const signupModal = require("../models/signupSchema");
+const signupModel = require("../Schema/signupSchema");
 
 router.post("/addproperty", async (req, res) => {
   try {
@@ -16,24 +16,21 @@ router.post("/addproperty", async (req, res) => {
 });
 
 router.get("/property", async (req, res) => {
-  // res.status(200).send("property GET route")
   console.log(`This is cookie from backend ${req.headers.authorization}`);
-  // console.log("get route of property")
   try {
     const token = req.headers.authorization;
     const verifyToken = jwt.verify(token, process.env.SC_KEY);
     console.log(verifyToken);
     if (verifyToken) {
       console.log(verifyToken);
-      const userDetail = await signupModal.find({ email: verifyToken });
-      //   console.log(userDetail);
+      const userDetail = await signupModel.find({ email: verifyToken });
 
       if (userDetail.length) {
-        const propertyData = await userModal.find();
+        const propertyData = await userModel.find();
         res.status(200).send({ property: propertyData, userData: userDetail });
         console.log(userDetail);
       } else {
-        res.status(409).send("Unauthorized user");
+        res.status(409).send("User not Unauthorized");
       }
       console.log(userDetail);
     } else {
