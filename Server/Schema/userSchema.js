@@ -155,22 +155,13 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  longitude: {
-    type: Number,
-    required: true,
-  },
-  views: {
-    type: Number,
-    // default:random_views
-  },
-  status: {
-    type: String,
-    // default:random_string
-  },
-  days_left: {
-    type: Number,
-    // default:random_days
-  },
+  longitude: {type: Number,required: true},
+  
+  views: {type: Number},
+
+  status: {type: String},
+
+  days_left: {type: Number},
 });
 
 userSchema.pre("save", function (next) {
