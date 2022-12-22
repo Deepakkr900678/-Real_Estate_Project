@@ -1,12 +1,13 @@
 const express = require("express");
-const signupModal = require("../Schema/signupSchema");
+const signupModel1 = require("../Schema/signupSchema");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const jwt = require("jsonwebtoken");
-
-router.get("/login", (req, res) => {
-  signupModal
+const bodyParser = require("body-parser")
+router.use(bodyParser.json())
+router.post("/login", (req, res) => {
+  signupModel1
     .find({ email: req.body.email })
     .then((data) => {
       if (!data.length) {
@@ -23,7 +24,7 @@ router.get("/login", (req, res) => {
               res.status(400).send("Incorrect password");
             }
           });
-        console.log(data.length);
+          console.log(data.length);
       }
     })
     .catch((err) => {
@@ -32,17 +33,20 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/signup", (req, res) => {
-  signupModal.find({ email: req.body.email }).then((data) => {
+  //console.log(signupModel1.email)
+  signupModel1.find({ email: req.body.email }).then((data) => {
+    // console.log(req.body.email)
+    console.log(data)
     if (data.length) {
       res.status(400).send("User already exists!");
     } else {
-      const newUser = new signupModal({ ...req.body });
+      const newUser = new signupModel1({ ...req.body });
       bcrypt
         .hash(req.body.password, saltRounds)
         .then(function (hash) {
           // Store hash in your password DB.
           newUser.password = hash;
-          newUser.cpassword = hash;
+          newUser.confirmpassword = hash;
           newUser
             .save()
             .then((data) => {
@@ -53,10 +57,13 @@ router.post("/signup", (req, res) => {
             });
         })
         .catch((err) => {
-          res.status(404).send(err);
+          res.status(404).send({
+            status:err,
+          message:"Error in reading Data"});
         });
     }
   });
 });
+
 
 module.exports = router;

@@ -8,8 +8,8 @@ import { BiShow, BiPencil } from "react-icons/bi";
 import { FaImages } from "react-icons/fa";
 import axios from "axios";
 import { Cookies } from "react-cookie";
-import Header from "../header_Sidebar/Header";
-import Sidebar from "../header_Sidebar/Sidebar";
+import Header from "../header_sidebar/Header";
+import Sidebar from "../header_sidebar/Sidebar";
 import "./Property.css";
 
 const Property = () => {
@@ -38,10 +38,9 @@ const Property = () => {
     console.log(ppd_arr);
     const ppd_id = parseInt(ppd_arr[1]);
 
-    // axios.get("http://localhost:5000/property")
     axios({
       method: "get",
-      url: "https://us-central1-html-d0cfb.cloudfunctions.net/aadesh_Realestate_Server/property",
+      url: "http://localhost:5000/property",
       headers: {
         Accept: "application/json",
         authorization: token,
@@ -69,7 +68,7 @@ const Property = () => {
       console.log("Inside afterLogin function property.js useEffect");
       axios({
         method: "get",
-        url: "https://us-central1-html-d0cfb.cloudfunctions.net/aadesh_Realestate_Server/property",
+        url: "http://localhost:5000/property",
         headers: {
           Accept: "application/json",
           authorization: token,

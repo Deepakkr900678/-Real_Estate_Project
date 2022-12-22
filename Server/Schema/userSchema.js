@@ -178,7 +178,7 @@ userSchema.pre("save", function (next) {
   sequencingProperty
     .getSequenceNextValue("user_id")
     .then((counter) => {
-      console.log("asdasd", counter);
+      console.log("RealEstate", counter);
       if (!counter) {
         sequencingProperty
           .insertCounter("user_id")
