@@ -41,7 +41,7 @@ const Property = () => {
     // axios.get("http://localhost:5000/property")
     axios({
       method: "get",
-      url: "https://us-central1-html-d0cfb.cloudfunctions.net/aadesh_Realestate_Server/property",
+      url: "https://test-five-virid.vercel.app/deepak_Realestate_Server/property",
       headers: {
         Accept: "application/json",
         authorization: token,
@@ -69,7 +69,7 @@ const Property = () => {
       console.log("Inside afterLogin function property.js useEffect");
       axios({
         method: "get",
-        url: "https://us-central1-html-d0cfb.cloudfunctions.net/aadesh_Realestate_Server/property",
+        url: "https://test-five-virid.vercel.app/deepak_Realestate_Server/property",
         headers: {
           Accept: "application/json",
           authorization: token,
