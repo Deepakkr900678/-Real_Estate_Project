@@ -24,20 +24,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 
-app.listen(3000,()=>console.log("Server is up at 3000 ports"))
+
 
 app.get("/", (req, res) => {
   res.status(200).send("Realestate Backend server By DeepakKumar");
 });
 
-app.get("*", (req, res) => {
-  res.status(400).json({
-    status:"failed",
-    message:"Invalid Request",
-  });
-});
+// app.get("*", (req, res) => {
+//   res.status(400).json({
+//     status:"failed",
+//     message:"Invalid Request SHASHANK",
+//   });
+// });
 
 app.use(userController);
 app.use(signupLoginController);
 
 exports.deepak_Realestate_Server = functions.https.onRequest(app);
+
+app.listen(5000,()=>console.log("Server is up at 5000 ports"))
