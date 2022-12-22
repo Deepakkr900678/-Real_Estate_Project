@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 
-app.listen(3000,()=>console.log("Server is up at 3000 ports"))
+app.listen(3600,()=>console.log("Server is up at 3000 ports"))
 
 app.get("/", (req, res) => {
   res.status(200).send("Realestate Backend server By DeepakKumar");
