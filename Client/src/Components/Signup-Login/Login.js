@@ -28,7 +28,7 @@ export default function Login() {
     const userLogin = () => {
       axios({
         method: "post",
-        url: "http://localhost:5000/login",
+        url: "https://realestatebackend.onrender.com/login",
         data: loginDetails,
       })
         .then((response) => {

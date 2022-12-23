@@ -43,7 +43,7 @@ function LocationInfo() {
     const sendData = () => {
       axios({
         method: "post",
-        url: "http://localhost:5000/addproperty",
+        url: "https://realestatebackend.onrender.com/addproperty",
         headers: {
           Accept: "application/json",
           authorization: token,
@@ -56,7 +56,7 @@ function LocationInfo() {
           localStorage.removeItem("BASIC_INFO");
           localStorage.removeItem("PROPERTY_DETAILS");
           localStorage.removeItem("GENERAL_INFO");
-          console.log(res);
+          // console.log(res);
           navigate("/");
         })
         .catch((err) => {

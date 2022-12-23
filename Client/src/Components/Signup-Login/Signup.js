@@ -11,7 +11,7 @@ export default function Signup() {
   const handleSignup = (e) => {
     e.preventDefault();
     const password = e.target.elements.password.value;
-    const confirmPassword = e.target.elements.cpassword.value;
+    const confirmPassword = e.target.elements.confirmpassword.value;
 
     if (password === confirmPassword) {
       // console.log("matching");
@@ -19,7 +19,7 @@ export default function Signup() {
         username: e.target.elements.username.value,
         email: e.target.elements.email.value,
         password: e.target.elements.password.value,
-        cpassword: e.target.elements.cpassword.value,
+        confirmpassword: e.target.elements.confirmpassword.value,
       });
       setDataSent(true);
     } else {
@@ -27,14 +27,14 @@ export default function Signup() {
     }
     // console.log(e.target.elements.email.value)
     // console.log(e.target.elements.password.value)
-    // console.log(e.target.elements.cpassword.value)
+    // console.log(e.target.elements.confirmpassword.value)
   };
 
   useEffect(() => {
     const userSignup = () => {
       axios({
         method: "post",
-        url: "http://localhost:5000/signup",
+        url: "https://realestatebackend.onrender.com/signup",
         data: signupDetails,
       })
         .then((response) => {
