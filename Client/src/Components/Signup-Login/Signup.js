@@ -34,7 +34,7 @@ export default function Signup() {
     const userSignup = () => {
       axios({
         method: "post",
-        url: "https://realestate-back-qi4u.onrender.com/signup",
+        url: "https://realestatebackend.onrender.com/signup",
         data: signupDetails,
       })
         .then((response) => {
@@ -57,47 +57,47 @@ export default function Signup() {
 
   return (
     <>
-      <div className="S-container">
-        <div className="S-formDiv">
+      <div className="container">
+        <div className="formDiv">
           <h1>Realestate</h1>
           <p>Create New Account</p>
           <form action="/signup" method="POST" onSubmit={handleSignup}>
             <input
-              id="S-username"
+              id="username"
               type="text"
               required={true}
               name="username"
               placeholder="ENTER YOUR NAME"
             />
             <input
-              id="S-userid"
+              id="userid"
               type="email"
               required={true}
               name="email"
               placeholder="EMAIL ID"
             />
             <input
-              id="S-password"
+              id="password"
               name="password"
               required={true}
               type="password"
               placeholder="PASSWORD"
             />
             <input
-              id="S-cpassword"
-              name="cpassword"
+              id="confirmpassword"
+              name="confirmpassword"
               required={true}
               type="password"
               placeholder="CONFIRM PASSWORD"
             />
-            <button type="submit" id="S-signin">
+            <button type="submit" id="signin">
               Sign Up
             </button>
           </form>
         </div>
 
-        <h2 id="S-afterForm">
-          <Link className="S-signup" to="/">
+        <h2 id="afterForm">
+          <Link className="signup" to="/">
             Sign in
           </Link>
         </h2>

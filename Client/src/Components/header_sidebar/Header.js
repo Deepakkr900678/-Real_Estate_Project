@@ -18,7 +18,7 @@ const Header = () => {
     const getUserData = () => {
       axios({
         method: "get",
-        url: "https://realestate-back-qi4u.onrender.com/property",
+        url: "https://realestatebackend.onrender.com/property",
         headers: {
           Accept: "application/json",
           authorization: token,
