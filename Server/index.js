@@ -27,12 +27,12 @@ app.use(cors());
 app.listen(3000,()=>console.log("Server is up at 3000 ports"))
 
 app.get("/", (req, res) => {
-  res.status(200).send("Realestate Backend server By DeepakKumar");
+  res.status(200).send("Realestate Backend Server By DeepakKumar");
 });
 
 app.get("*", (req, res) => {
   res.status(400).json({
-    status:"failed",
+    status:"Failed",
     message:"Invalid Request",
   });
 });

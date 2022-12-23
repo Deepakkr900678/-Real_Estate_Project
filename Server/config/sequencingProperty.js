@@ -1,14 +1,9 @@
 const mongoose = require("mongoose");
 
 const SequenceSchema = new mongoose.Schema({
-  _id: {
-    type: String,
-    required: true,
-  },
-  seq: {
-    type: Number,
-    required: true,
-  },
+  _id: {type: String,required: true},
+  
+  seq: {type: Number,required: true},
 });
 
 const PropertyCounter = mongoose.model("PropertyCounter", SequenceSchema);
@@ -43,8 +38,4 @@ const insertCounter = (seqName) => {
       .catch((err) => reject(err));
   });
 };
-module.exports = {
-  PropertyCounter,
-  getSequenceNextValue,
-  insertCounter,
-};
+module.exports = { PropertyCounter, getSequenceNextValue, insertCounter };

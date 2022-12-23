@@ -6,9 +6,7 @@ const saltRounds = 10;
 const jwt = require("jsonwebtoken");
 
 router.post("/login", (req, res) => {
-  signupModal
-    .find({ email: req.body.email })
-    .then((data) => {
+  signupModal.find({ email: req.body.email }).then((data) => {
       if (!data.length) {
         res.status(400).send("User doesn't exists!");
         console.log(data.length);
