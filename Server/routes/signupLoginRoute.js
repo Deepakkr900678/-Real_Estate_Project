@@ -12,7 +12,7 @@ router.post("/login", (req, res) => {
     .then((data) => {
       if (!data.length) {
         res.status(400).send("User doesn't exists!");
-        console.log(data.length);
+        // console.log(data.length);
       } else {
         bcrypt
           .compare(req.body.password, data[0].password)
@@ -24,7 +24,7 @@ router.post("/login", (req, res) => {
               res.status(400).send("Incorrect password");
             }
           });
-          console.log(data.length);
+          // console.log(data.length);
       }
     })
     .catch((err) => {
@@ -33,10 +33,9 @@ router.post("/login", (req, res) => {
 });
 
 router.post("/signup", (req, res) => {
-  //console.log(signupModel1.email)
   signupModel1.find({ email: req.body.email }).then((data) => {
     // console.log(req.body.email)
-    console.log(data)
+    //console.log(data)
     if (data.length) {
       res.status(400).send("User already exists!");
     } else {
