@@ -23,12 +23,12 @@ export default function Login() {
 
   useEffect(() => {
     const cookies = new Cookies();
-    console.log("Token in login => " + cookies.get("jwt"));
+    // console.log("Token in login => " + cookies.get("jwt"));
 
     const userLogin = () => {
       axios({
         method: "post",
-        url: "http://localhost:5000/login",
+        url: "https://realestate-back-qi4u.onrender.com/login",
         data: loginDetails,
       })
         .then((response) => {
@@ -51,12 +51,12 @@ export default function Login() {
     };
     if (dataSent) {
       userLogin();
-      console.log("Inside useEffect login function");
+      // console.log("Inside useEffect login function");
 
       setDataSent(false);
       // console.log( `This is cookie from useEffect => ${cookies}`)
     }
-    console.log("Inside useEffect");
+    // console.log("Inside useEffect");
   }, [loginDetails, dataSent, navigate, cookies, setCookie]);
 
   return (

@@ -33,14 +33,14 @@ const Property = () => {
   };
 
   const onSearch = (searchTerm) => {
-    console.log(searchTerm);
+    // console.log(searchTerm);
     const ppd_arr = searchTerm.split(" ");
-    console.log(ppd_arr);
+    // console.log(ppd_arr);
     const ppd_id = parseInt(ppd_arr[1]);
 
     axios({
       method: "get",
-      url: "http://localhost:5000/property",
+      url: "https://realestate-back-qi4u.onrender.com/property",
       headers: {
         Accept: "application/json",
         authorization: token,
@@ -65,10 +65,10 @@ const Property = () => {
 
   useEffect(() => {
     const afterLogin = () => {
-      console.log("Inside afterLogin function property.js useEffect");
+      // console.log("Inside afterLogin function property.js useEffect");
       axios({
         method: "get",
-        url: "http://localhost:5000/property",
+        url: "https://realestate-back-qi4u.onrender.com/property",
         headers: {
           Accept: "application/json",
           authorization: token,
@@ -77,11 +77,11 @@ const Property = () => {
         credentials: "include",
       })
         .then((res) => {
-          console.log("Inside then block of property.js");
+          // console.log("Inside then block of property.js");
           setUsers(res.data.property);
         })
         .catch((err) => {
-          console.log("Inside catch block of property.js");
+          // console.log("Inside catch block of property.js");
           console.log(err);
 
           if (

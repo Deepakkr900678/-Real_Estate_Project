@@ -14,11 +14,11 @@ const Header = () => {
   const token = cookies.get("jwt");
 
   useEffect(() => {
-    console.log("Header useEffect");
+    // console.log("Header useEffect");
     const getUserData = () => {
       axios({
         method: "get",
-        url: "http://localhost:5000/property",
+        url: "https://realestate-back-qi4u.onrender.com/property",
         headers: {
           Accept: "application/json",
           authorization: token,

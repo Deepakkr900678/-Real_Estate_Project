@@ -14,7 +14,7 @@ export default function Signup() {
     const confirmPassword = e.target.elements.cpassword.value;
 
     if (password === confirmPassword) {
-      console.log("matching");
+      // console.log("matching");
       setSignupDetails({
         username: e.target.elements.username.value,
         email: e.target.elements.email.value,
@@ -34,7 +34,7 @@ export default function Signup() {
     const userSignup = () => {
       axios({
         method: "post",
-        url: "http://localhost:5000/signup",
+        url: "https://realestate-back-qi4u.onrender.com/signup",
         data: signupDetails,
       })
         .then((response) => {
