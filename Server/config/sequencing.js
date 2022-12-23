@@ -31,7 +31,7 @@ const getSequenceNextValue = (seqName) => {
 };
 
 const insertCounter = (seqName) => {
-  const newCounter = new Counter({ _id: seqName, seq: 100 });
+  const newCounter = new Counter({ _id: seqName, seq: 001 });
   return new Promise((resolve, reject) => {
     newCounter
       .save()

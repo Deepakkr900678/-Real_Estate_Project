@@ -6,7 +6,7 @@ const signupLoginController = require("./routes/signupLoginRoute");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
-const functions = require("firebase-functions");
+// const functions = require("firebase-functions");
 const DB = process.env.MONGO_DB;
 
 mongoose.connect(
@@ -40,6 +40,6 @@ app.get("/", (req, res) => {
 app.use(userController);
 app.use(signupLoginController);
 
-exports.deepak_Realestate_Server = functions.https.onRequest(app);
+// exports.deepak_Realestate_Server = functions.https.onRequest(app);
 
 app.listen(5000,()=>console.log("Server is up at 5000 ports"))
