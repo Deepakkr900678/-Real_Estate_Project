@@ -35,7 +35,7 @@ router.post("/login", (req, res) => {
 router.post("/signup", (req, res) => {
   signupModel1.find({ email: req.body.email }).then((data) => {
     // console.log(req.body.email)
-    console.log(data)
+    //console.log(data)
     if (data.length) {
       res.status(400).send("User already exists!");
     } else {

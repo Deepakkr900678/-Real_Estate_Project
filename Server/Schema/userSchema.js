@@ -178,13 +178,13 @@ userSchema.pre("save", function (next) {
   sequencingProperty
     .getSequenceNextValue("user_id")
     .then((counter) => {
-      console.log("RealEstate", counter);
+      // console.log("RealEstate", counter);
       if (!counter) {
         sequencingProperty
           .insertCounter("user_id")
           .then((counter) => {
             doc._id = counter;
-            console.log(doc);
+            // console.log(doc);
             next();
           })
           .catch((error) => next(error));

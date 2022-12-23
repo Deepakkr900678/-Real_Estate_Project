@@ -87,7 +87,7 @@ function LocationInfo() {
       ...data,
     };
 
-    console.log(ALLDATA);
+    // console.log(ALLDATA);
     setAllData(ALLDATA);
     setDataSent(true);
   };

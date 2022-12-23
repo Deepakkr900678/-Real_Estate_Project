@@ -13,7 +13,7 @@ body{
     height: 100%;
     width: 100%;
 }
-.S-container{
+.container{
     height: 100vh;
     width: 100%;
     display: flex;
@@ -23,7 +23,7 @@ body{
     background-color: #e0f8eb;
 }
 
-.S-formDiv{
+.formDiv{
     padding: 1.8rem 0.8rem;
     background-color: white;
     width: 28vw;
@@ -31,7 +31,7 @@ body{
 
 }
 
-.S-formDiv *{
+.formDiv *{
     margin: 0.8rem 0rem;
     display: flex;
     flex-direction: column;
@@ -40,10 +40,10 @@ body{
     text-align: center;
 }
 
-.S-formDiv h1{
+.formDiv h1{
     color: rgb(71 85 164);
 }
-.S-formDiv p{
+.formDiv p{
     margin-top: 2rem;
     color: #818181;
     font-size: 0.9rem;
@@ -54,25 +54,26 @@ input{
     width: 20vw;
     border-radius: 0.3rem;
 }
-#S-username{
+#username{
     margin-top: 3rem;
     text-align: start;
     border: 2px solid #e5e1e1;
 }
 
-#S-userid{
+#userid{
     text-align: start;
+    margin: 0.7rem;
     border: 2px solid #e5e1e1;
 }
 
-#S-password, #S-cpassword{
+#password, #confirmpassword{
     text-align: start;
-    /* margin-bottom: 2.7rem; */
+    margin: 0.7rem;
     border: 2px solid #e5e1e1;
 
 }
 
-#S-signin{
+#signin{
     padding: 0.7rem;
     width: 22vw;
     border: none;
@@ -83,13 +84,13 @@ input{
     /* border: none; */
 }
 
-.S-signup{
+.signup{
     text-decoration: none;
     color: rgb(71 85 164);
     font-weight: bold;
 }
 
-#S-afterForm{
+#afterForm{
     margin-top: 1.5rem;
     font-size: 1rem;
 }

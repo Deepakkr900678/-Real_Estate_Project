@@ -23,7 +23,7 @@ export default function Login() {
 
   useEffect(() => {
     const cookies = new Cookies();
-    console.log("Token in login => " + cookies.get("jwt"));
+    // console.log("Token in login => " + cookies.get("jwt"));
 
     const userLogin = () => {
       axios({
@@ -51,45 +51,45 @@ export default function Login() {
     };
     if (dataSent) {
       userLogin();
-      console.log("Inside useEffect login function");
+      // console.log("Inside useEffect login function");
 
       setDataSent(false);
       // console.log( `This is cookie from useEffect => ${cookies}`)
     }
-    console.log("Inside useEffect");
+    // console.log("Inside useEffect");
   }, [loginDetails, dataSent, navigate, cookies, setCookie]);
 
   return (
     <>
-      <div className="L-container">
-        <div className="L-formDiv">
+      <div className="container">
+        <div className="formDiv">
           <h1>Realestate</h1>
           <p>Enter your credentials to access your account</p>
           <form action="/login" method="POST" onSubmit={handleLogin}>
             <input
-              id="L-userid"
+              id="userid"
               type="email"
               required={true}
               name="email"
               placeholder="USER ID"
             />
             <input
-              id="L-password"
+              id="password"
               name="password"
               required={true}
               type="password"
               placeholder="PASSWORD"
             />
-            <button type="submit" id="L-signin">
+            <button type="submit" id="signin">
               Sign In
             </button>
           </form>
-          <Link className="L-signup" to="/signup">
+          <Link className="signup" to="/signup">
             Signup
           </Link>
         </div>
 
-        <h3 id="L-afterForm">
+        <h3 id="afterForm">
           Don't have an account?{" "}
           <Link className="signup" to="/signup">
             Signup

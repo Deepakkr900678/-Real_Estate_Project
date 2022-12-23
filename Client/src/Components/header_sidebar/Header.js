@@ -14,7 +14,7 @@ const Header = () => {
   const token = cookies.get("jwt");
 
   useEffect(() => {
-    console.log("Header useEffect");
+    // console.log("Header useEffect");
     const getUserData = () => {
       axios({
         method: "get",

@@ -33,9 +33,9 @@ const Property = () => {
   };
 
   const onSearch = (searchTerm) => {
-    console.log(searchTerm);
+    // console.log(searchTerm);
     const ppd_arr = searchTerm.split(" ");
-    console.log(ppd_arr);
+    // console.log(ppd_arr);
     const ppd_id = parseInt(ppd_arr[1]);
 
     axios({
@@ -77,12 +77,12 @@ const Property = () => {
         credentials: "include",
       })
         .then((res) => {
-          console.log("Inside then block of property.js");
+          //console.log("Inside then block of property.js");
           setUsers(res.data.property);
         })
         .catch((err) => {
-          console.log("Inside catch block of property.js");
-          console.log(err);
+          //console.log("Inside catch block of property.js");
+          //console.log(err);
 
           if (
             err.response.data === "Unauthorized user" ||
