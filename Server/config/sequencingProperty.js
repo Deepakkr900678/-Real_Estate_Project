@@ -33,7 +33,7 @@ const getSequenceNextValue = (seqName) => {
 };
 
 const insertCounter = (seqName) => {
-  const newCounter = new PropertyCounter({ _id: seqName, seq: 1000 });
+  const newCounter = new PropertyCounter({ _id: seqName, seq: 0001 });
   return new Promise((resolve, reject) => {
     newCounter
       .save()

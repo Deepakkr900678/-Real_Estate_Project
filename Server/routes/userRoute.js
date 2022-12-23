@@ -8,7 +8,6 @@ router.use(bodyParser.json())
 
 router.post("/addproperty", async (req, res) => {
   try {
-    console.log(req.body,"SHASHANK");
     const users = new userModel(req.body);
     const createUser = await users.save();
     res.status(201).send(createUser);
