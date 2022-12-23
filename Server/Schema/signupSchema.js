@@ -34,7 +34,7 @@ signupSchema.pre("save", function (next) {
   sequencing
     .getSequenceNextValue("user_id")
     .then((counter) => {
-      console.log("asdasd", counter);
+      console.log("RealEstate", counter);
       if (!counter) {
         sequencing
           .insertCounter("user_id")

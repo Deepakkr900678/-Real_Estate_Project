@@ -17,8 +17,6 @@ export default function Login() {
       password: e.target.elements.password.value,
     });
     setDataSent(true);
-    // console.log(e.target.elements.email.value)
-    // console.log(e.target.elements.password.value)
   };
 
   useEffect(() => {
