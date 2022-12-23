@@ -12,9 +12,9 @@ import Protected from "./Components/Protected/protected";
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/signup" element={<Signup></Signup>}></Route>
+        <Routes>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route
           path="/"
           element={

@@ -6,7 +6,8 @@ const signupLoginController = require("./routes/signupLoginRoute");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
-// const functions = require("firebase-functions");
+
+//const functions = require("firebase-functions");
 const DB = process.env.MONGO_DB;
 
 mongoose.connect(
